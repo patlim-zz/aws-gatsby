@@ -1,7 +1,7 @@
 {
-  "name": "gatsby-starter-default",
+  "name": "aws-gatsby",
   "private": true,
-  "description": "A simple starter to get up and developing quickly with Gatsby",
+  "description": "Gatsby.js site on amazon s3 with AWS CodePipeline",
   "version": "0.1.0",
   "author": "Kyle Mathews <mathews.kyle@gmail.com>",
   "dependencies": {
