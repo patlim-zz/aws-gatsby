@@ -12,7 +12,7 @@ phases:
       - npm run build
   post_build:
     commands:
-      - 'aws s3 sync "public/" "s3://aws-gatsby.s3-website-ap-southeast-2.amazonaws.com" --delete --acl "public-read" '
+      - 'aws s3 sync "public/" "s3://aws-gatsby" --delete --acl "public-read" '
 artifacts:
   base-directory: public
   files:
