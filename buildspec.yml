@@ -1,20 +1,17 @@
-version: 0.1
+version: 0.2
 phases:
   install:
+    runtime-versions:
+      nodejs: 10
     commands:
-      - touch .npmignore
-      - npm install -g gatsby
-  pre_build:
-    commands:
+      - echo installing npm packages
       - npm install
   build:
     commands:
+      - echo build started
       - npm run build
+
   post_build:
     commands:
-      - 'aws s3 sync "public/" "s3://aws-gatsby" --delete --acl "public-read" '
-artifacts:
-  base-directory: public
-  files:
-    - '**/*'
-  discard-paths: 'yes'
+      - echo post_build started
+      - aws s3 sync public/ aws-gatsby  --exclude "*.map" --acl public-read --delete
